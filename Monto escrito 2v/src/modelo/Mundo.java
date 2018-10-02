@@ -5,9 +5,7 @@ public class Mundo {
 	private Persistencia p;
 
 	
-	
-	
-	
+
 	public Persistencia getP() {
 		return p;
 	}

@@ -1,24 +1,53 @@
 package vista;
 
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class Interfaz {
+import modelo.Persistencia;
 
-	public String pedirNumero()
+public class Interfaz extends JFrame implements ActionListener
+{
+
+	private static final long serialVersionUID = 1L;
+	private Panelingresar panelEntrada;
+	private PanelResultados panelResultado;
+	private Persistencia p;
+	
+	
+	public Interfaz()
 	{
-		return JOptionPane.showInputDialog(null,"Ingrese el numero a convertir","Número", JOptionPane.INFORMATION_MESSAGE);
-	}
-	public void evaluarM(String monto)
-	{
-		String cadena = "";
-		cadena = "El monto es de: "+ monto+" euros";
-		imprimirResultado(cadena, monto);
-	}
-	public void imprimirResultado(String cadena, String monto) {
+		setSize(550,400);
+		setResizable(false);
+		setTitle("Monto escrito");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setLayout(new BorderLayout());
 		
-		JOptionPane.showMessageDialog(null, cadena, monto, JOptionPane.INFORMATION_MESSAGE);
+		panelEntrada = new Panelingresar();
+		add(panelEntrada, BorderLayout.NORTH);
+		
+		panelResultado = new PanelResultados();
+		add(panelResultado, BorderLayout.CENTER);
+		
+		panelEntrada.getBtnConvertir().addActionListener(this);
+		
+		
+		
 	}
-	
-	
-	
+
+
+	@Override
+	public void actionPerformed(ActionEvent evento) {
+
+		if(evento.getActionCommand().equals(panelEntrada.CONVERTIR))
+		{
+
+			panelResultado.getTxtMonto().setText(p.calcularMonto(Integer.parseInt(panelEntrada.getNumero())));
+		}
+		
+	}
 }

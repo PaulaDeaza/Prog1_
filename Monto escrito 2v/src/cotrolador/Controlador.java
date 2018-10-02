@@ -16,8 +16,6 @@ public class Controlador {
 		p = new Persistencia();
 		gui = new Interfaz();
 		
-		int numero = Integer.parseInt(gui.pedirNumero());
-		p.calcularMonto(numero);
-		gui.evaluarM(p.getMonto());
+		gui.setVisible(true);
 	}
 }

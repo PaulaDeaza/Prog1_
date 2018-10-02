@@ -6,11 +6,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
+import modelo.Persistencia;
+
 public class Interfaz extends JFrame implements ActionListener
 {
 	private static final long serialVersionUID = 1L;
 	private panelResultados pr;
 	private panelEntrada panelen;
+
 	
 	public Interfaz()
 	{
