@@ -20,7 +20,8 @@ public class Interfaz extends JFrame implements ActionListener
 	
 	public Interfaz()
 	{
-		setSize(550,400);
+		p = new Persistencia();
+		setSize(550,200);
 		setResizable(false);
 		setTitle("Monto escrito");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -45,8 +46,8 @@ public class Interfaz extends JFrame implements ActionListener
 
 		if(evento.getActionCommand().equals(panelEntrada.CONVERTIR))
 		{
-
-			panelResultado.getTxtMonto().setText(p.calcularMonto(Integer.parseInt(panelEntrada.getNumero())));
+			panelResultado.setTxtMonto(p.calcularMonto(Integer.parseInt(panelEntrada.getNumero().getText())));
+			
 		}
 		
 	}

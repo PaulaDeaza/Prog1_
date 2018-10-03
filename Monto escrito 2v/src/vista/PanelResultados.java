@@ -20,13 +20,13 @@ public class PanelResultados extends JPanel
 	{
 	
 		setLayout(new GridLayout(2, 1));
-		TitledBorder border = new TitledBorder("Monto");
+		TitledBorder border = new TitledBorder("CONVERSIÓN");
 		border.setTitleColor(Color.BLACK);
 		setBorder(border);
 		resultado = new JLabel("El monto escrito es: ");
-		txtMonto = new JTextField("");
+		txtMonto = new JTextField(" ");
 		txtMonto.setForeground(Color.BLACK);
-		txtMonto.setBackground(Color.WHITE);
+		txtMonto.setBackground(Color.PINK);
 		
 		add(resultado);
 		add(txtMonto);
@@ -54,8 +54,8 @@ public class PanelResultados extends JPanel
 		return txtMonto;
 	}
 
-	public void setTxtMonto(JTextField txtMonto) {
-		this.txtMonto = txtMonto;
+	public void setTxtMonto(String resultado) {
+		this.txtMonto.setText(resultado);
 	}
 
 	public static long getSerialversionuid() {

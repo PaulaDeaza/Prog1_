@@ -27,14 +27,14 @@ public class Panelingresar extends JPanel
 	public Panelingresar()
 	{
 		setLayout(new GridLayout(2, 2));
-		TitledBorder titulo = BorderFactory.createTitledBorder("Número a ingresar");
+		TitledBorder titulo = BorderFactory.createTitledBorder("Datos de entrada");
 		titulo.setTitleColor(Color.BLACK);
 		setBorder(titulo);
 		
-		entrada = new JLabel("Ingrese el monto a convertir");
+		entrada = new JLabel("Ingrese el monto a convertir: ");
 		numero = new JTextField("");
-		numero.setForeground(Color.BLUE);
-		numero.setBackground(Color.LIGHT_GRAY);
+		numero.setForeground(Color.BLACK);
+		numero.setBackground(Color.PINK);
 		btnConvertir = new JButton("Convertir");
 		btnConvertir.setActionCommand(CONVERTIR);
 		
